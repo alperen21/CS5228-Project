@@ -9,5 +9,10 @@
 2. Replace the `review_num_to_get` with the number of reviews to collect for each game
 3. The output `.csv` file will be `steam_x_ids_y_reviews.csv`
 
+## `steam_scrape_applist.py` -- script to pull review from selected game list
+1. Replace the `applist_filename` with the text file containing the list of game for data collection.
+2. Replace the `review_num_to_get` with the number of reviews to collect for each game
+3. The output `.csv` file will be `steam_x_ids_y_reviews.csv`
+
 # Reference
 Based on blog of [Medium: Scraping Steam User Reviews](https://andrew-muller.medium.com/scraping-steam-user-reviews-9a43f9e38c92)
