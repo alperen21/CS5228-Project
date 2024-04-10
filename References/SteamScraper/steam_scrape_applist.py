@@ -5,6 +5,8 @@ from bs4 import BeautifulSoup
 import time
 
 
+applist_filename = "app_list_new.txt"
+
 def get_reviews(appid, params={"json": 1}):
     url = "https://store.steampowered.com/appreviews/"
     response = requests.get(
@@ -72,7 +74,8 @@ def read_appids_from_list(filename):
     appids = []
     with open(filename) as file:
         for line in file:
-            appids.append(line)
+            appids.append(appids.append(int(line.strip())))
+
     return appids
 
 
@@ -80,7 +83,7 @@ def main():
     # appid_num_to_get = 5
     review_num_to_get = 1000
     reviews = []
-    applist_filename = "app_list_new.txt"
+    
 
     start_time = time.time()
     print("Start collection...\n")
