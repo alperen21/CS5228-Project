@@ -28,8 +28,10 @@ def tokenize_text(text):
     
     return filtered_tokens
 
-def tokenize_all_text(df_target):
-    df_target["review_tokenised"] = df_target["review"].copy()
+def tokenize_all_text(df_target, target_col = "review"):
+    df_target[target_col] = df_target[target_col].astype(str)
+    df_target[target_col].dropna(inplace=True)
+    df_target["review_tokenised"] = df_target[target_col].copy()
     df_target["review_tokenised"] = df_target["review_tokenised"].apply(lambda text: tokenize_text(text))
     return df_target
 
